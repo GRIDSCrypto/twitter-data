@@ -12,7 +12,7 @@ tweets_body = [] # array for storing the body of the tweets
 tweets_timestamp = [] #array for storing timestamps of the tweets
 
 #open csv file to gather the tweet and timestamp into arrays
-with open('btc_5_2017.csv', 'r') as csvfile:
+with open('btc_7_2017.csv', 'r') as csvfile:
 	reader = csv.reader(csvfile)
 	for row in reader:
 		body = row[5]
@@ -25,13 +25,14 @@ with open('btc_5_2017.csv', 'r') as csvfile:
 #writing everything into a new file to write with sentiment score 
 #columns will be timestamp, text, sentiment score
 #sentiment score ranges from -1 to 1 
-with open('btc_5_2017_gcp_sentiment.csv', 'w') as csvfile:
+with open('btc_7_2017_gcp_sentiment.csv', 'w') as csvfile:
 	writer = csv.writer(csvfile)
 	writer.writerow(["timestamp", "tweet_text", "sentiment score"])
 	counter = 0
-	for body in tweets_body:
+	for i in range(0, len(tweets_body)):
 		# The text to analyze
-		text = body
+		text = tweets_body[i]
+		timestamp = tweets_timestamp[i]
 		try:
 			document = types.Document(content=text,type=enums.Document.Type.PLAIN_TEXT)
 
@@ -41,7 +42,7 @@ with open('btc_5_2017_gcp_sentiment.csv', 'w') as csvfile:
 			pass
 
 		#writing to csv now
-		writer.writerow([text, sentiment.score])
+		writer.writerow([timestamp, text, sentiment.score])
 		counter += 1
 
 		#sleeping due to 600 request per minute quota by google
