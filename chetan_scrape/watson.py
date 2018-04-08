@@ -5,8 +5,8 @@ import csv
 
 tone_analyzer = ToneAnalyzerV3(
     version='2018-02-21',
-    username='3b73b9ed-0af6-4a62-a665-4b0ffb9bceac',
-    password='MBb3A8VDjcCi'
+    username='XXXXX',
+    password='XXXXX'
 )
 
 csv_name = 'btc-04-2017-score'
