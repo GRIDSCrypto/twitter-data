@@ -1,7 +1,7 @@
-#twitter-data
+# twitter-data
 Grids Crypto twitter 
 
-#Scrape: Update: April 8, 2018 
+# Scrape: Update: April 8, 2018 
 Terry and Chetan both scraped twitter tweets for information about bitcoin. 
 We used a twitter api here: https://github.com/taspinar/twitterscraper
 Unfortantely the scraper sometimes gets a JSONdecode error and then returns 
@@ -10,7 +10,7 @@ However we still have some data.
 
 Data is located in google drive. Contact Adam from Grids for the data. 
 
-#Sentiment Analysis 
+# Sentiment Analysis 
 Sentiment analysis was done on some of the existing data that we have
 in order to get some sort of score to feed into our LSTM model created
 by George and Adam. 
